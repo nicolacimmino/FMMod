@@ -48,6 +48,9 @@ void printReport()
     VT100.setCursor(22, 2);
     VT100.setTextColor(VT_YELLOW);
     Serial.print(" P - Preemphasis  S - Stereo  F - Frequency  W - Power");
+    
+    VT100.setCursor(19, 2);
+    VT100.clearLine();
 
     VT100.cursorOff();
 }
@@ -96,6 +99,12 @@ uint8_t askPower()
     VT100.clearLine();
 
     return min((uint8_t)atoi(line), 15);
+}
+
+void clearInputLine()
+{
+    VT100.setCursor(19, 2);
+    VT100.clearLine();
 }
 
 #endif

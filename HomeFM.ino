@@ -67,6 +67,9 @@ void loop()
     fmtx_set_rfgain(EEPROM.read(EEPROM_PWR));
   }
 
+  if (controlValue > 0) {
+      clearInputLine();
+  }
 
   if (millis() - lastReport > 1000)
   {
